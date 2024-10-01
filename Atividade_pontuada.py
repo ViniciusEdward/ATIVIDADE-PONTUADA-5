@@ -53,10 +53,15 @@ while True :
 nome_do_arquivo = "pesquisa_prefeitura.txt"
 
 # Abrindo arquivo e definindo que será feita a escrita de dados.
-with open(nome_do_arquivo, "a") as arquivo_familia:
+with open(nome_do_arquivo, "w") as arquivo_familia:
     # Percorrendo vetor/lista.
     for i in range(1):
         #Escrevendo no arquivo uma linha de cada vez.
-        arquivo_familia.write(f"Total de famílias que responderam: {contador}, Média salarial: R${media_salario:.2f}, Média do número de filhos: {media_filhos}, Maior salário: R${maior_salario:.2f}, Menor salário: R${menor_salario:.2f}\n")
+        arquivo_familia.write(f"""\nTotal de famílias que responderam: {contador}
+Média salarial: R${media_salario:.2f}
+Média do número de filhos: {media_filhos}
+Maior salário: R${maior_salario:.2f} 
+Menor salário: R${menor_salario:.2f}\n
+""")
 
 arquivo_familia.close()
